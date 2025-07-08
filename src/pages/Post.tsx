@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import SimpleSelect from '../components/SimpleSelect';
 
@@ -25,7 +25,7 @@ const Post: React.FC = () => {
 
   const handleImageUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
     const files = Array.from(event.target.files || []);
-    setSelectedImages(prev => [...prev, ...files]);
+    setSelectedImages(prev => [...prev, ...files] as File[]);
   };
 
   const removeImage = (index: number) => {
